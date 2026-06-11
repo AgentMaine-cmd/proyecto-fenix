@@ -4,11 +4,20 @@ import java.util.List;
 /**
  * Esta clase procesa listas de usuarios. Contiene 'code smells' intencionados.
  */
+
 public class ProcesadorUsuarios {
        private static final int ROL_INVITADO = 2;
        private static final int ROL_ADMIN = 1;
 
     // Método con 'code smells': largo, números mágicos, malos nombres.
+
+    /**
+     * Procesamos una lista de usuarios que separamos por roles y que luego devovlemos diferenciados entre admins y usuarios junto a sus nombres
+     * 
+     * @param dataList Array que contiene una lista de usuarios
+     * 
+     * @return devuelve una lista de usuarios diferenciados entre invitados y usuarios
+     */
     public String procesarLista(List<String> dataList) {
         String admins = "";
         String invitados = "";
@@ -31,12 +40,24 @@ public class ProcesadorUsuarios {
         }
         return "Admins: " + admins + " | Invitados: " + invitados;
     }
-
+    /** 
+     * Añadimos el nombre de un usuario a la cadena 
+     * 
+     * @param invitados cadena donde añadimos los usuarios con el rol de invitado
+     * @param nombre nombre de los usuarios con el rol de invitados
+     * @return devuelve una cadena con el nombre del nuevo usuario invitado
+     */
     private String procesadorInvitado(String invitados, String nombre) {
         invitados += nombre + ',';
         return invitados;
     }
-
+    /**
+     * añadimos el nombre de un usuario a la cadena
+     * 
+     * @param admins cadena donde añadimos los usuarios con el rol de admins
+     * @param nombre nombre de los usuarios con el rol de admins
+     * @return devuelve una cadena con el nombre del nuevo usuario admin
+     */
     private String procesadorAdmin(String admins, String nombre) {
         admins += nombre + ",";
         return admins;
