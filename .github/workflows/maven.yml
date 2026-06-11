@@ -30,5 +30,3 @@ jobs:
     - name: Run tests with Maven
       run: mvn clean test -f fenix/pom.xml
 
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@v4
