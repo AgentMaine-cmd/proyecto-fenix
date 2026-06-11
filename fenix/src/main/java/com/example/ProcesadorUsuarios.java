@@ -62,4 +62,5 @@ public class ProcesadorUsuarios {
         admins += nombre + ",";
         return admins;
     }
+    //prueba 1 de commit con automatizacion
 }
